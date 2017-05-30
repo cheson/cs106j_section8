@@ -1,0 +1,44 @@
+<head> 
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="buttons.css">
+</head>
+
+<!-- https://www.w3schools.com/js/js_htmldom_animate.asp --> 
+<a href="http://unicorn-ui.com/" class="button button-tiny">Go</a>
+create 5 divs (static, but eventually use javascript)
+add a button to start
+<button> START </button>
+
+<style>
+#first {
+  background: #FFFF00;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+</style>
+
+<div id="first">
+</div>
+
+<script>
+function moveBlock() {
+    var elem = document.getElementById("first"); 
+    console.log(elem);
+    var pos = 0;
+    var id = setInterval(frame, 5);
+    function frame() {
+        if (pos == 350) {
+            clearInterval(id);
+        } else {
+            pos++; 
+            elem.style.top = pos + 'px'; 
+            elem.style.left = pos + 'px'; 
+	    console.log(elem);
+        }
+    }
+}
+moveBlock();
+</script>
+
+
