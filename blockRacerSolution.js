@@ -16,8 +16,7 @@ function moveBlocks() {
     for (var i = 0; i < blocks.length; i++) {
       var currBlock = blocks[i];
       var elem = document.getElementById(currBlock); 
-      //150 is width of block and margins (needs work to get this precise)
-      if (blockOffsets[i] + 150 >= finishLine) {
+      if (blockOffsets[i] + calculateBlockWidth(elem) >= finishLine) {
       	addCrown(elem);
       	clearInterval(id);
       } else {
@@ -27,6 +26,20 @@ function moveBlocks() {
       }
     } 	
   }
+}
+
+/*
+ * Calculates the full width of an element, including all
+ * the margins, borders, and paddings on the element.
+ * https://stackoverflow.com/questions/23268784/how-to-get-element-width-height-with-margin-padding-border-in-native-javascrip
+ */
+function calculateBlockWidth(element) {
+	var style = element.currentStyle || window.getComputedStyle(element);
+	var width = element.offsetWidth;
+    var margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+    var padding = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight);
+    var border = parseFloat(style.borderLeftWidth) + parseFloat(style.borderRightWidth);
+    return width + margin - padding + border;
 }
 
 /*
