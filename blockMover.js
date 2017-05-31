@@ -16,7 +16,7 @@ function moveBlocks() {
     for (var i = 0; i < blocks.length; i++) {
       var currBlock = blocks[i];
       var elem = document.getElementById(currBlock); 
-      //150 is width of block and margins
+      //150 is width of block and margins (needs work to get this precise)
       if (blockOffsets[i] + 150 >= finishLine) {
       	addCrown(elem);
       	clearInterval(id);
