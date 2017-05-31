@@ -1,6 +1,28 @@
-button {
-  :hover {
-      background-color: #4CAF50; /* Green */
-      color: white;
-  }
+div {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	margin: 25px;
+	border-radius: 5px;
+}
+
+/*
+color picker:
+https://www.google.com/search?q=color+picker&oq=color+picker&aqs=chrome..69i57j0l5.2150j0j7&sourceid=chrome&ie=UTF-8    
+*/
+
+#blue {
+  background: #185ae8;
+}
+#yellow {
+  background: #e8cf19;
+}
+#red {
+  background: #c62b2b;
+}
+#purple {
+  background: #942bc6;
+}
+#green {
+  background: #2bc645;
 }
